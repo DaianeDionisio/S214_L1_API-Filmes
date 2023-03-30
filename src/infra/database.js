@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const uri = `mongodb+srv://daianedionisio:<3Y7LHgfxYDIpsVxt>@cluster0.m5yryrm.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://daianedionisio:CxD3mqWTCqPxNkKw@cluster0.m5yryrm.mongodb.net/?retryWrites=true&w=majority`;
+
+mongoose.set("strictQuery", false);
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
@@ -9,7 +11,7 @@ mongoose.connect(uri, {
 
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+const FilmeSchema = new Schema({
     id: {
         type: String,
         index: true,
@@ -21,8 +23,8 @@ const UserSchema = new Schema({
     produtora: String
 });
 
-const UserModel = mongoose.model('UserModel', UserSchema);
+const FilmeModel = mongoose.model('FilmeModel', FilmeSchema);
 
 module.exports = {
-    UserModel,
+    FilmeModel,
 };

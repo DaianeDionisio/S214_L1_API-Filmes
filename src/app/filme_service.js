@@ -2,7 +2,7 @@ const validate = require('validate.js');
 
 const Utils = require('../utils/utils');
 const Constants = require('../utils/constants');
-const UserRepository = require('../port/filme_repository');
+const UserRepository = require('../port/filmes_repository');
 const Constraints = require('../utils/filme_validation');
 const Validation = require('../utils/validation');
 
@@ -16,7 +16,7 @@ const Filme = {
 
             data.id = Utils.generateUuid();
 
-            const response = await UserRepository.create(data);
+            const response = await FilmeRepository.create(data);
 
             if (response.code === 11000) {
                 const result = Constants.ErrorDuplicate;
@@ -37,7 +37,7 @@ const Filme = {
                 return response;
             }
 
-            const response = await UserRepository.update(data);
+            const response = await FilmeRepository.update(data);
 
             if (response === []) {
                 const result = Constants.ErrorNotFound;
@@ -58,7 +58,7 @@ const Filme = {
                 return response;
             }
 
-            const response = await UserRepository.delete(data);
+            const response = await FilmeRepository.delete(data);
 
             return response;
         } catch (error) {
@@ -75,7 +75,7 @@ const Filme = {
                 return response;
             }
 
-            const response = await UserRepository.getByProdutora(data);
+            const response = await FilmeRepository.getByProdutora(data);
 
             return response;
         } catch (error) {
@@ -85,7 +85,7 @@ const Filme = {
 
     async list() {
         try {
-            const response = await UserRepository.list();
+            const response = await FilmeRepository.list();
 
             return response;
         } catch (error) {

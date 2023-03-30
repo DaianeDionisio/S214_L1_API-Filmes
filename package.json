@@ -16,5 +16,6 @@
     "moongose": "^1.0.0",
     "uuid": "^9.0.0",
     "validate.js": "^0.13.1"
-  }
+  },
+  "devDependencies": {}
 }

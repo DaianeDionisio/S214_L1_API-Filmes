@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const uri = `mongodb+srv://daianedionisio:CxD3mqWTCqPxNkKw@cluster0.m5yryrm.mongodb.net/?retryWrites=true&w=majority`;
 
-mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", true);
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
